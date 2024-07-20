@@ -587,12 +587,17 @@ Renders a post selector field. This can be used to build custom queries with whi
 
 You can find more detail about the use of the post selector field [here](./post-selector.md).
 
+
+#### Additional Options
+- show_count: `bool` Whether to add query total results count to the posts section title in the editor. Defaults to true.
+
 #### Example
 Form options input:
 ```php
 $form_options = array(
 	'some_posts' => array(
 		'type' => 'posts',
+		'show_count' => true,
 		'label' => __('Some posts query', 'widget-form-fields-text-domain'),
 	)
 );

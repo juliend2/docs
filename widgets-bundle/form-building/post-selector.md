@@ -7,6 +7,7 @@ Form options input:
 $form_options = array(
     'some_posts' => array(
         'type' => 'posts',
+        'show_count' => true,
         'label' => __('Some posts query', 'widget-form-fields-text-domain'),
     )
 );
