@@ -362,7 +362,7 @@ Renders a dropdown select field. This field is better for a long list of predefi
 - prompt: `string` If present, it is included as a disabled (not selectable) value at the top of the list of options. If there is no default value, it is selected by default. You might even want to leave the label value blank when you use this.
 - options `array` The list of options which may be selected.
 - multiple `bool` Determines whether this is a single or multiple select field.
-- select2 `bool` If both `select2` and `multiple` are enabled, [Select2](https://select2.org) will be enabled for the field. 
+- select2 `bool` If both `select2` and `multiple` are enabled, [Select2](https://select2.org) will be enabled for the field.
 
 #### Example 1 - Default Value Without Prompt
 Form options input:
@@ -606,6 +606,7 @@ Result:
 
 ![Widget Form Posts Selector](../images/form-field-type-posts.png)
 
+
 ---
 
 ### section
@@ -703,7 +704,7 @@ Result:
 ---
 
 ### repeater
-The repeater field type provides a convenient way to repeat a specified set of form fields. 
+The repeater field type provides a convenient way to repeat a specified set of form fields.
 
 #### Additional Options
 - item_name: `string` A default label for each repeated item.
@@ -800,7 +801,7 @@ Result:
 
 ![Widget Form Builder field](../images/form-field-type-builder.png)
 
-### code 
+### code
 A textarea field with the [Behave.js library](https://github.com/jakiestfu/Behave.js) set up for it.
 
 #### Additional options
