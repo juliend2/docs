@@ -23,12 +23,12 @@ class MyCustomWidget extends SiteOrigin_Widget {
 
 So when would you want to use this? One example is to late-add data to your form array. Maybe you have a `select` field with several hundred options that you want to add to the `options`. Adding this in the main form array means you're loading all the options into memory with every page load.
 
-The `modify_form` function is only ever called when the Widgets Bundle needs the form. So you can load the large options array from a file and not  use memory unnecessarily on every request.
+The `modify_form` function is only ever called when the Widgets Bundle needs the form. So you can load the large options array from a file and not  use memory unnecessarily on every request. `modify_form` is also only called when editing the widget form if the form options [were added using get_widget_form](https://siteorigin.com/docs/widgets-bundle/getting-started/creating-a-widget/#heading-widget-class).
 
 ```php
 class MyCustomWidget extends SiteOrigin_Widget {
     // We're leaving out all the setup code here
-    
+
     function modify_form( $form ) {
         $form['my_field']['options'] = include( 'data-file.php' );
         return $form;
@@ -51,7 +51,7 @@ Both of these are quite easy to hook into. If you're using the `siteorigin_widge
 function mytheme_filter_widget_form($form_options, $widget){
     // This first line isn't necessary, but it's here for demonstration.
     if( get_class($widget) != 'SiteOrigin_Widget_Button_Widget' ) return $form_options;
-    
+
     if( !empty($form_options['design']['fields']['theme']['options']) ) {
         $form_options['design']['fields']['theme']['options']['test'] = __('Test Style', 'mytheme');
     }
