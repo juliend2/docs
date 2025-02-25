@@ -44,7 +44,7 @@ Video URI: http://example.com/hello-world-widget-video
 
 ## Widget Class
 
-Now you'll need to create a class that extends the `SiteOrigin_Widget` abstract base class. The `SiteOrigin_Widget` class is based on the WordPress Widgets API, so a constructor containing information about the widget is required.
+Now you'll need to create a class that extends the `SiteOrigin_Widget` abstract base class. The `SiteOrigin_Widget` class is based on the WordPress Widgets API, so a constructor containing information about the widget is required. We recommend setting `$form_options` using the Widgets Bundle specific `get_widget_form` method over the Widgets API constructor, but both are useable.
 
 You'll also need to register your widget class with the SiteOrigin Widgets Bundle using the `siteorigin_widget_register` function, passing in the widget id, widget file path, and widget class name as arguments.
 
@@ -70,20 +70,23 @@ class Hello_World_Widget extends SiteOrigin_Widget {
 			),
 
 			// The $control_options array, which is passed through to WP_Widget
-			array(
-			),
+			array(),
 
-			// The $form_options array, which describes the form fields used to configure SiteOrigin widgets. We'll explain these in more detail later.
-			array(
-				'text' => array(
-					'type' => 'text',
-					'label' => __( 'Hello world! goes here.', 'hello-world-widget-text-domain' ),
-					'default' => 'Hello world!',
-				),
-			),
+			// We set $form_options using the get_widget_form method below.
+			false,
 
 			// The $base_folder path string.
 			plugin_dir_path( __FILE__ )
+		);
+	}
+
+	public function get_widget_form() {
+		return array(
+			'text' => array(
+				'type' => 'text',
+				'label' => __( 'Hello world! goes here.', 'hello-world-widget-text-domain' ),
+				'default' => 'Hello world!',
+			),
 		);
 	}
 }

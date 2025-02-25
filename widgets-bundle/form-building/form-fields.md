@@ -24,7 +24,7 @@ Renders a text input field.
 #### Additional Options
 - placeholder: `string` A string to display before any text has been input.
 - readonly: `bool` If true, this field will not be editable.
-- input_type: `string` The input type  to use for this field. Supports all standard HTML input types. For a list avaliable types, [click here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input).
+- input_type: `string` The input type to use for this field. Supports all standard HTML input types. For a list avaliable types, [click here](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input).
 
 #### Example
 Form options input:
@@ -103,6 +103,7 @@ Renders a text input field for entering a number. This is the same as the _text_
 - abs: `bool` Whether to optionally apply the PHP function `abs` when saving to ensure only positive numbers are possible.
 - min: `float` An optional minimum value allowed.
 - max: `float` An optional maximum value allowed.
+- unit: `string` An optional unit of measurement shown to the user. This option will not be saved.
 
 #### Example
 Form options input:
@@ -111,7 +112,8 @@ $form_options = array(
 	'some_number' => array(
 		'type' => 'number',
 		'label' => __( 'Enter a number', 'widget-form-fields-text-domain' ),
-		'default' => '12654'
+		'default' => '12654',
+		'unit' => 'px',
 	)
 );
 ```
@@ -153,7 +155,7 @@ Renders multiple fields for entering [unit of measurement](https://developer.moz
 
 #### Additional Options
 - measurements: `array` The list of measurement options
--- units: `array` The selector units of measurement. If no units are set, default units are used -  `px`, `%`, `in`, `cm`, `mm`, `em`, `rem`, `pt`, `pc`, `ex`, `ch`, `vw`, `vh`, `vmin`, `vmax`.
+-- units: `array` The selector units of measurement. If no units are set, default units are used - `px`, `%`, `in`, `cm`, `mm`, `em`, `rem`, `pt`, `pc`, `ex`, `ch`, `vw`, `vh`, `vmin`, `vmax`.
 - separator: `string` separator for the measurements. Default is an empty space.
 - autofill: `bool` Whether to automatically fill the rest of the inputs when the first value is entered. Default is false.
 
@@ -360,6 +362,7 @@ Renders a dropdown select field. This field is better for a long list of predefi
 - prompt: `string` If present, it is included as a disabled (not selectable) value at the top of the list of options. If there is no default value, it is selected by default. You might even want to leave the label value blank when you use this.
 - options `array` The list of options which may be selected.
 - multiple `bool` Determines whether this is a single or multiple select field.
+- select2 `bool` If both `select2` and `multiple` are enabled, [Select2](https://select2.org) will be enabled for the field.
 
 #### Example 1 - Default Value Without Prompt
 Form options input:
@@ -584,12 +587,17 @@ Renders a post selector field. This can be used to build custom queries with whi
 
 You can find more detail about the use of the post selector field [here](./post-selector.md).
 
+
+#### Additional Options
+- show_count: `bool` Whether to add query total results count to the posts section title in the editor. Defaults to true.
+
 #### Example
 Form options input:
 ```php
 $form_options = array(
 	'some_posts' => array(
 		'type' => 'posts',
+		'show_count' => true,
 		'label' => __('Some posts query', 'widget-form-fields-text-domain'),
 	)
 );
@@ -597,6 +605,7 @@ $form_options = array(
 Result:
 
 ![Widget Form Posts Selector](../images/form-field-type-posts.png)
+
 
 ---
 
@@ -634,8 +643,68 @@ Result:
 
 ---
 
+### tabs
+The tabs field integrates with the section field. By itself, this field doesn't function and must be paired with a section field as each tab corresponds to an assigned section. On mobile devices, the tabs will disappear in favor of the original sections.
+
+This field requires Widgets Bundle version 1.50.1 or higher. If the user is using a version prior to that release, the sections will output as normal.
+
+#### Options
+- tabs: `array` This associative array contains the section id and label of the section to display as a tab. The section label doesn't have to be the same as the section.
+
+```php
+
+add_filter( 'siteorigin_widgets_form_options_sow-editor', function( $form_options ) {
+	if ( empty( $form_options ) ) {
+		return $form_options;
+	}
+
+	$form_options['tabs'] = array(
+		'type' => 'tabs',
+		'tabs' => array(
+			'example_section' => __( 'Example Section', 'so-example' ),
+			'another_example' => __( 'Second Example', 'so-example' ),
+		),
+	);
+
+	$form_options['example_section'] = array(
+		'type' => 'section',
+		'label' => __( 'Example Section' , 'so-example' ),
+		'tab' => true,
+		'hide' => true,
+		'fields' => array(
+			'test' => array(
+				'type' => 'html',
+				'markup' => __( 'First tab', 'so-example' ),
+			),
+		),
+	);
+
+
+	$form_options['another_example'] = array(
+		'type' => 'section',
+		'label' => __( 'The Tab label defined above will be output instead of this' , 'so-example' ),
+		'tab' => true,
+		'hide' => true,
+		'fields' => array(
+			'test' => array(
+				'type' => 'html',
+				'markup' => __( 'Second tab', 'so-example' ),
+			),
+		),
+	);
+
+
+	return $form_options;
+} );
+```
+
+Result:
+![Tabs Form Field](../images/form-field-tabs.png)
+
+---
+
 ### repeater
-The repeater field type provides a convenient way to repeat a specified set of form fields. 
+The repeater field type provides a convenient way to repeat a specified set of form fields.
 
 #### Additional Options
 - item_name: `string` A default label for each repeated item.
@@ -732,7 +801,7 @@ Result:
 
 ![Widget Form Builder field](../images/form-field-type-builder.png)
 
-### code 
+### code
 A textarea field with the [Behave.js library](https://github.com/jakiestfu/Behave.js) set up for it.
 
 #### Additional options
@@ -845,3 +914,70 @@ $form_options = array(
 Result:
 
 ![Widget Form Icon Selector](../images/form-field-type-preset.png)
+
+### html
+
+The HTML field allows you to directly output HTML. This is useful for conveying information that is better served being separate rather than in a field description, giving a brief for a section, etc.
+
+This field requires Widgets Bundle version Widgets Bundle 1.44.0 or higher. If the user is using a version prior to that release, nothing will output.
+
+#### Options
+
+- markup `string` A string containing HTML to output.
+
+#### Example
+
+This example will add two HTML fields to the end of the SiteOrgin Editor widget. The first will display a box with some inline styling and the second will add the SiteOrigin logo.
+
+```php
+add_filter( 'siteorigin_widgets_form_options_sow-editor', function( $form_options ) {
+	if ( empty( $form_options ) ) {
+		return $form_options;
+	}
+
+	// This go anywhere in the `$form_options` array.
+	$form_options['html_button_example'] = array(
+		'type' => 'html',
+		'markup' => '<span style="border: 1px solid #000; padding: 5px; margin: 21px; display: inline-block;">' . __( 'Box with inline styling', 'so-example' ) . '</span>',
+	);
+
+	$form_options['siteorigin_logo'] = array(
+		'type' => 'html',
+		'label' => __( 'SiteOrigin Logo HTML Example' , 'so-example' ),
+		'markup' => '<img src="https://siteorigin.com/wp-content/themes/siteorigin-theme/images/logo/logo.svg" width="175" height="33">',
+	);
+
+	return $form_options;
+} );
+
+```
+
+Result:
+
+![HTML Form field](../images/form-field-html.png)
+
+### Autocomplete
+
+The Autocomplete field provides a list of posts or terms users that the user can select from. When an item is selected, the post/term id will be inserted. If multiple are selected each selection will be separated by a comma.
+
+#### Options
+
+- post_types `array` An array of post types to use in the autocomplete query. Only used for posts. Default is posts.
+- source `string` Indicates which database table will be used to retrieve autocomplete suggestions. Options are `posts` and `terms`. Default is posts
+- multiple `string` Whether to allow multiple items to be selected. Default is true.
+
+#### Example
+
+```php
+$form_options = array(
+	'example' => array(
+		'type' => 'autocomplete',
+		'label' => __( 'Pages', 'siteorigin-premium'),
+		'post_types' => 'pages',
+	),
+);
+```
+
+Result:
+
+![autocomplete Form field](../images/form-field-autocomplete.png)

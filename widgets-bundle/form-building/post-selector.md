@@ -7,12 +7,13 @@ Form options input:
 $form_options = array(
     'some_posts' => array(
         'type' => 'posts',
+        'show_count' => true,
         'label' => __('Some posts query', 'widget-form-fields-text-domain'),
     )
 );
 ```
 
-Use of the post selector will result in a pseudo query looking something like this: 
+Use of the post selector will result in a pseudo query looking something like this:
 `post_type=_all&orderby=post__in&order=DESC&posts_per_page=3&sticky=&additional=`.
 
 This pseudo query may be transformed into a format understood by WordPress by using the `siteorigin_widget_post_selector_process_query()` function, which takes only the pseudo query as an argument and returns a query object which may be passed directly to the `WP_Query` constructor to find posts.
