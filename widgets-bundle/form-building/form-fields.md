@@ -973,7 +973,9 @@ $form_options = array(
 	'example' => array(
 		'type' => 'autocomplete',
 		'label' => __( 'Pages', 'siteorigin-premium'),
-		'post_types' => 'pages',
+		'post_types' => array(
+			'page'
+		),
 	),
 );
 ```
