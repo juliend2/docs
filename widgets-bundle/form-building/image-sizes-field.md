@@ -7,11 +7,11 @@ $form_options = array(
 	'image' => array(
 		'type' => 'media',
 		'library' => 'image',
-		'label' => __(' Background Image', 'widget-form-fields-text-domain' ),
-	),	
+		'label' => __(' Background Image', 'so-example' ),
+	),
 	'image_size' => array(
 		'type' => 'image-size',
-		'label' => __( 'Background Image size', 'widget-form-fields-text-domain' ),
+		'label' => __( 'Background Image size', 'so-example' ),
 	)
 );
 ```
@@ -32,7 +32,7 @@ if( ! empty( $instance['image'] ) ) {
 ```
 
 The above PHP will:
-1. Check to ensure an image is set. 
+1. Check to ensure an image is set.
 2. Check if an image size is set.
   - If no size is set, default to full.
   - If size is set, use `image_size`.

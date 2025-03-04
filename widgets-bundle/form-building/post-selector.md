@@ -5,11 +5,11 @@ The post selector field allows the user to build a query to find posts in the da
 Form options input:
 ```php
 $form_options = array(
-    'some_posts' => array(
-        'type' => 'posts',
-        'show_count' => true,
-        'label' => __('Some posts query', 'widget-form-fields-text-domain'),
-    )
+	'some_posts' => array(
+		'type' => 'posts',
+		'show_count' => true,
+		'label' => __( 'Some posts query', 'so-example' ),
+	)
 );
 ```
 
@@ -30,20 +30,20 @@ $processed_query = siteorigin_widget_post_selector_process_query( $post_selector
 $query_result = new WP_Query( $processed_query );
 
 // Loop through the posts and do something with them.
-if($query_result->have_posts()) : ?>
+if ( $query_result->have_posts() ) : ?>
 <div>
-    <ul>
-        <?php while($query_result->have_posts()) : $query_result->the_post(); ?>
-            <li>
-                <h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
-                <div>
-                    <?php if( has_post_thumbnail() ) : $img = wp_get_attachment_image_src( get_post_thumbnail_id() ); ?>
-                        <a href="<?php the_permalink() ?>" style="background-image: url(<?php echo sow_esc_url($img[0]) ?>)"/>
-                    <?php endif; ?>
-                </div>
-            </li>
-        <?php endwhile; wp_reset_postdata(); ?>
-    </ul>
+	<ul>
+		<?php while( $query_result->have_posts() ) : $query_result->the_post(); ?>
+			<li>
+				<h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
+				<div>
+					<?php if ( has_post_thumbnail() ) : $img = wp_get_attachment_image_src( get_post_thumbnail_id() ); ?>
+						<a href="<?php the_permalink() ?>" style="background-image: url(<?php echo sow_esc_url( $img[0] ); ?>)"/>
+					<?php endif; ?>
+				</div>
+			</li>
+		<?php endwhile; wp_reset_postdata(); ?>
+	</ul>
 </div>
 
 <?php endif; ?>
