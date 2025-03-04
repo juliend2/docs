@@ -50,7 +50,7 @@ class MyCustomWidget extends SiteOrigin_Widget {
 
 	function modify_instance( $form ) {
 
-		if ( ! empty( $$this->get_global_settings( 'example' ) ) ) {
+		if ( ! empty( $this->get_global_settings( 'example' ) ) ) {
 			// Global example setting is enabled. Do something here.
 		}
 
