@@ -68,7 +68,7 @@ The following snippet will add an example checkbox to the SiteOrigin Button Widg
 add_filter( 'siteorigin_widgets_settings_form_sow-button', function( $form_options ) {
 	$form_options['example'] = array(
 		'type' => 'checkbox',
-		'label' => __( 'Example', 'so-example' ),
+		'label' => __( 'Example', 'so-docs' ),
 	);
 
 	return $form_options;

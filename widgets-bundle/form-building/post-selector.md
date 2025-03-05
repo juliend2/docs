@@ -8,7 +8,7 @@ $form_options = array(
 	'some_posts' => array(
 		'type' => 'posts',
 		'show_count' => true,
-		'label' => __( 'Some posts query', 'so-example' ),
+		'label' => __( 'Some posts query', 'so-docs' ),
 	)
 );
 ```

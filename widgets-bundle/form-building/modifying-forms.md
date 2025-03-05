@@ -14,7 +14,7 @@ class MyCustomWidget extends SiteOrigin_Widget {
 		// We can modify this $form array however we want
 		$form['test_field'] = array(
 			'type' => 'text',
-			'label' => __( 'Test Field', 'so-example' ),
+			'label' => __( 'Test Field', 'so-docs' ),
 		);
 		return $form;
 	}
@@ -55,7 +55,7 @@ function mytheme_filter_widget_form( $form_options, $widget ) {
 	}
 
 	if ( ! empty( $form_options['design']['fields']['theme']['options'] ) ) {
-		$form_options['design']['fields']['theme']['options']['test'] = __( 'Test Style', 'so-example' );
+		$form_options['design']['fields']['theme']['options']['test'] = __( 'Test Style', 'so-docs' );
 	}
 
 	return $form_options;

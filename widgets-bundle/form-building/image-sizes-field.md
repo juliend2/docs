@@ -7,11 +7,11 @@ $form_options = array(
 	'image' => array(
 		'type' => 'media',
 		'library' => 'image',
-		'label' => __(' Background Image', 'so-example' ),
+		'label' => __(' Background Image', 'so-docs' ),
 	),
 	'image_size' => array(
 		'type' => 'image-size',
-		'label' => __( 'Background Image size', 'so-example' ),
+		'label' => __( 'Background Image size', 'so-docs' ),
 	)
 );
 ```

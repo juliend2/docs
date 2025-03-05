@@ -48,12 +48,12 @@ Additionally, a 'sanitize' option may be set on form options to specify extra sa
 $form_options = array(
 	'some_url' => array(
 		'type' => 'link',
-		'label' => __( 'Some URL goes here', 'so-example' ),
+		'label' => __( 'Some URL goes here', 'so-docs' ),
 		'sanitize' => 'url',
 	),
 	'some_email_address' => array(
 		'type' => 'text',
-		'label' => __( 'Some email address goes here', 'so-example' ),
+		'label' => __( 'Some email address goes here', 'so-docs' ),
 		'sanitize' => 'email',
 	),
 );
@@ -67,7 +67,7 @@ function __construct() {
 	$form_options = array(
 		'some_date' => array(
 			'type' => 'text',
-			'label' => __( 'Some date goes here', 'so-example' ),
+			'label' => __( 'Some date goes here', 'so-docs' ),
 			'sanitize' => 'date',
 		),
 	);
@@ -77,9 +77,9 @@ function __construct() {
 add_filter( 'siteorigin_widgets_sanitize_field_date', array( $this, 'sanitize_date' ) );
 
 function sanitize_date( $date_to_sanitize ) {
-    // Perform custom date sanitization here.
-    $sanitized_date = sanitize_text_field( $date_to_sanitize );
-    return $sanitized_date;
+	// Perform custom date sanitization here.
+	$sanitized_date = sanitize_text_field( $date_to_sanitize );
+	return $sanitized_date;
 }
 ```
 

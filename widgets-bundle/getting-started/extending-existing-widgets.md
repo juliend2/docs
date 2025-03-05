@@ -14,7 +14,7 @@ The `theme` field is a method of allowing the user to select different button th
 function mytheme_extend_button_form( $form_options, $widget ) {
 	// Lets add a new theme option.
 	if ( ! empty($form_options['design']['fields']['theme']['options']) ) {
-		$form_options['design']['fields']['theme']['options']['test'] = __( 'Test Style', 'so-example' );
+		$form_options['design']['fields']['theme']['options']['test'] = __( 'Test Style', 'so-docs' );
 	}
 
 	return $form_options;
