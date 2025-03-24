@@ -972,8 +972,10 @@ The Autocomplete field provides a list of posts or terms users that the user can
 $form_options = array(
 	'example' => array(
 		'type' => 'autocomplete',
-		'label' => __( 'Pages', 'siteorigin-docs' ),
-		'post_types' => 'pages',
+		'label' => __( 'Pages', 'siteorigin-docs'),
+		'post_types' => array(
+			'page'
+		),
 	),
 );
 ```
