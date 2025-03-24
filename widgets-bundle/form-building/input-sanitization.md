@@ -48,12 +48,12 @@ Additionally, a 'sanitize' option may be set on form options to specify extra sa
 $form_options = array(
 	'some_url' => array(
 		'type' => 'link',
-		'label' => __( 'Some URL goes here', 'so-docs' ),
+		'label' => __( 'Some URL goes here', 'siteorigin-docs' ),
 		'sanitize' => 'url',
 	),
 	'some_email_address' => array(
 		'type' => 'text',
-		'label' => __( 'Some email address goes here', 'so-docs' ),
+		'label' => __( 'Some email address goes here', 'siteorigin-docs' ),
 		'sanitize' => 'email',
 	),
 );
@@ -67,7 +67,7 @@ function __construct() {
 	$form_options = array(
 		'some_date' => array(
 			'type' => 'text',
-			'label' => __( 'Some date goes here', 'so-docs' ),
+			'label' => __( 'Some date goes here', 'siteorigin-docs' ),
 			'sanitize' => 'date',
 		),
 	);

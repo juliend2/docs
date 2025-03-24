@@ -83,7 +83,7 @@ array(
 	'text' => array(
 		'type' => 'better-text',
 		'my_property' => 'This is my custom property value',
-		'label' => __( 'A better text field.', 'so-docs' ),
+		'label' => __( 'A better text field.', 'siteorigin-docs' ),
 		'default' => 'Some better text.'
 	),
 ),
@@ -146,8 +146,8 @@ $form_options = array(
 	'text' => array(
 		'type' => 'better-text',
 		'my_property' => 'This is my custom property value',
-		'label' => __( 'A better text field.', 'so-docs' ),
-		'description' => __( 'A description for my custom text field.', 'so-docs' ),
+		'label' => __( 'A better text field.', 'siteorigin-docs' ),
+		'description' => __( 'A description for my custom text field.', 'siteorigin-docs' ),
 		'default' => 'Some better text.'
 	),
 );
