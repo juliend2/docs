@@ -31,7 +31,7 @@ add_filter( 'siteorigin_widgets_field_class_paths', 'my_custom_fields_class_path
 Implementing a custom field is as simple as extending one of the existing field classes and implementing or overriding at least the `render_field` and `sanitize_input` methods. There is much more that can be done, but this is all that is required to successfully render a custom field and save it's input.
 
 ### Filenames and class naming
-For your field class to be loaded, you need to name your class according to the convention mentioned above. However the file itself must be named according to the convention `$field_type.class.php` and it must be placed in one of the class paths you added in the step above. For example, if you have a field type of `taxonomylist` with a custom class path of `my_custom_fields/` and a class prefix of `My_Custom_Field_`, you'd first create the file `my_custom_fields/taxonomylist.class.php` and then define the class `My_Custom_Field_Taxonomylist` inside it. 
+For your field class to be loaded, you need to name your class according to the convention mentioned above. However the file itself must be named according to the convention `$field_type.class.php` and it must be placed in one of the class paths you added in the step above. For example, if you have a field type of `taxonomylist` with a custom class path of `my_custom_fields/` and a class prefix of `My_Custom_Field_`, you'd first create the file `my_custom_fields/taxonomylist.class.php` and then define the class `My_Custom_Field_Taxonomylist` inside it.
 
 ### Inheriting from SiteOrigin_Widget_Field_Base
 The `SiteOrigin_Widget_Field_Base` abstract class handles most of the work required for the widget form fields. It contains various properties and methods which are used to render the field for display in the front end and preparing input from the field for database persistence. When extending this class there are two abstract methods which must be implemented, namely, `render_field` and `sanitize_input`.
@@ -83,7 +83,7 @@ array(
 	'text' => array(
 		'type' => 'better-text',
 		'my_property' => 'This is my custom property value',
-		'label' => __('A better text field.', 'my-custom-field-test-widget-text-domain'),
+		'label' => __( 'A better text field.', 'siteorigin-docs' ),
 		'default' => 'Some better text.'
 	),
 ),
@@ -132,10 +132,10 @@ protected function render_after_field( $value, $instance ) {
 ```
 
 #### The `sanitize_instance` method
-There are case where a field may affect values on the widget instance, other than it's own input. It then becomes necessary to perform additional sanitization on the widget instance. In such a case the `sanitize_instance` method may be overridden. 
+There are case where a field may affect values on the widget instance, other than it's own input. It then becomes necessary to perform additional sanitization on the widget instance. In such a case the `sanitize_instance` method may be overridden.
 
 #### JavaScript variables
-Occasionally it is necessary for a field to set a variable to be used in the front end. For such cases, override the `get_javascript_variables` function. This will be called by the containing widget while it is rendering it's form and it will pass all field javascript variables to the front end where they will be accessible as a global object called `sow_field_javascript_variables`.  
+Occasionally it is necessary for a field to set a variable to be used in the front end. For such cases, override the `get_javascript_variables` function. This will be called by the containing widget while it is rendering it's form and it will pass all field javascript variables to the front end where they will be accessible as a global object called `sow_field_javascript_variables`.
 
 
 ### Using a custom field
@@ -146,8 +146,8 @@ $form_options = array(
 	'text' => array(
 		'type' => 'better-text',
 		'my_property' => 'This is my custom property value',
-		'label' => __( 'A better text field.', 'my-custom-field-test-widget-text-domain' ),
-		'description' => __( 'A description for my custom text field.' ),
+		'label' => __( 'A better text field.', 'siteorigin-docs' ),
+		'description' => __( 'A description for my custom text field.', 'siteorigin-docs' ),
 		'default' => 'Some better text.'
 	),
 );

@@ -5,11 +5,11 @@ The form filter is an incredibly useful filter for changing the fields of an exi
 This filter allows you to edit existing fields or add new ones. See the [form modification](../../form-building/modifying-forms.md) doc for more details.
 
 ```php
-function mytheme_filter_widget_form($form_options, $widget){
-    if( !empty($form_options['design']['fields']['theme']['options']) ) {
-        $form_options['design']['fields']['theme']['options']['test'] = __('Test Style', 'mytheme');
-    }
-    return $form_options;
+function mytheme_filter_widget_form( $form_options, $widget ) {
+	if ( ! empty( $form_options['design']['fields']['theme']['options'] ) ) {
+		$form_options['design']['fields']['theme']['options']['test'] = __( 'Test Style', 'siteorigin-docs' );
+	}
+	return $form_options;
 }
-add_filter('siteorigin_widgets_form_options_sow-button', 'mytheme_filter_widget_form', 10, 2)
+add_filter( 'siteorigin_widgets_form_options_sow-button', 'mytheme_filter_widget_form', 10, 2 )
 ```
