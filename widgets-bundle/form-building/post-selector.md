@@ -1,4 +1,5 @@
-# Post selector
+# Post Selector
+
 The post selector field allows the user to build a query to find posts in the database. The resulting posts are then typically used in some form of list display, e.g., a post carousel.
 
 ## Example
@@ -18,7 +19,7 @@ Use of the post selector will result in a pseudo query looking something like th
 
 This pseudo query may be transformed into a format understood by WordPress by using the `siteorigin_widget_post_selector_process_query()` function, which takes only the pseudo query as an argument and returns a query object which may be passed directly to the `WP_Query` constructor to find posts.
 
-### An example template using the post selector query
+### An Example Template Using the Post Selector Query
 
 ```php
 <?php
@@ -49,7 +50,7 @@ if ( $query_result->have_posts() ) : ?>
 <?php endif; ?>
 ```
 
-### Filtering siteorigin_widget_post_selector_process_query
+### Filtering Siteorigin_widget_post_selector_process_query
 
 The `siteorigin_widgets_posts_selector_query` filter can be used to filter the array returned by `siteorigin_widget_post_selector_process_query`. This allows you to alter the query of SiteOrigin widgets (i.e., Post Loop) and widgets that function and make changes that otherwise wouldn't be possible with just the Additional field.
 

@@ -1,9 +1,10 @@
-# Repeaters and sections
+# Repeaters and Sections
+
 ## Repeaters
-### Basic usage
+### Basic Usage
 Repeaters provide a way to repeat a group of form fields any number of times. The group of fields to be repeated are specified similarly to a section. Initially the repeater is empty and only displays the header label and the 'Add' button. When the user clicks the 'Add' button, an item containing the specified group of fields is added to the repeater in it's collapsed state, where only the item label, remove button and expand/collapse toggle are visible. Clicking anywhere on this item header, except on the remove button, will toggle the expanded/collapsed state. Clicking on the remove button will trigger a warning asking the user to confirm the action and then, on confirmation, remove the item from the repeater.
  
-### Example 1 - Basic usage
+### Example 1 - Basic Usage
 Form options input:
 ```php
 $form_options = array(
@@ -54,13 +55,13 @@ get_template_variables( $instance, $args ) {
 }
 ```
 
-### Using item labels
+### Using Item Labels
 By default, repeaters use the 'item_name' value as the item label in item headers. Repeaters can be configured to use a specific input field's value as the item label, which is displayed in the item header. This is done using the 'item_label' configuration value, which is an associative array that describes how the repeater may retrieve the item labels from an HTML elements as it is updated. It requires three properties, namely:
 - selector: `string` A JQuery selector which is used to find an element from which to retrieve the item label. Any JQuery selector is valid here.
 - update_event: `string` The javascript event on which to bind and update the item label. Defaults to 'change' event.
 - value_method: `string` The javascript function which should be used to retrieve the item label from an element. Defaults to `val()` method.
 
-### Example 2 - Using item labels
+### Example 2 - Using Item Labels
 Form options input:
 ```php
 $form_options = array(

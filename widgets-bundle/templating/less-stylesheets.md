@@ -1,4 +1,4 @@
-# LESS stylesheets
+# LESS Stylesheets
 
 For easier development of styles and runtime stylesheet generation the Widgets Bundle uses LESS. A LESS stylesheet may be specified by overriding the `get_style_name()` function and returning the name of the file, without the `.less` extension, found in the `styles` folder.
 
@@ -6,7 +6,7 @@ Once the widget's LESS stylesheets are generated, they'll be cached at `wp-conte
 
 `define( 'SITEORIGIN_WIDGETS_DEBUG', true );`
 
-## Mixin libraries
+## Mixin Libraries
 For convenience, we have included the mixin libraries, <a href="http://lesselements.com/" target="_blank">LESS Elements</a> and <a href="http://lesshat.madebysource.com/" target="_blank">LESSHat</a>, in the `base/less/` folder. They help reduce the amount of CSS required to ensure compatibility with multiple versions of multiple browsers, or where CSS is simply too verbose. See their respective documentation pages for more information on what's available and usage examples. These may be included in a LESS stylesheet by using the `@import` directive, as follows:
 
 ```less
@@ -14,13 +14,13 @@ For convenience, we have included the mixin libraries, <a href="http://lesseleme
 @import "lesshat";
 ```
 
-## Importing additional files
+## Importing Additional Files
 Other LESS and CSS files may be included using the `@import` directive. These additional files should be placed in the widget's `styles` folder. They will then be included before LESS compilation takes place.
 
-## Injecting LESS variables
+## Injecting LESS Variables
 For runtime stylesheet generation, the `SiteOrigin_Widget` base class provides a `get_less_variables()` function. To inject variables into your LESS stylesheets you provide the injection point in the stylesheet simply by declaring the variable name and a default value, and then supply those variables in an array returned by `get_less_variables()`. They keys in the returned array must match the LESS variable names exactly. 
 
-### Example - injecting LESS variables
+### Example - Injecting LESS Variables
 Provide injections points in the LESS stylesheet:
 ```less
 @background_color: #ffffff;
@@ -42,10 +42,10 @@ function get_less_variables( $instance ) {
 }
 ```
 
-## LESS `.widget-function()` callback
+## LESS `.widget-function()` Callback
 The Widgets Bundle allows callbacks from LESS files which may generate additional runtime styles based on user inputs. This is done in LESS by calling the `.widget-function()` function with the first argument being the name of the function to call, and any subsequent arguments are passed through to the function being called. In your widget class, you supply the function with a name prepended by 'less_'.
 
-### Example - using the `.widget-function()` callback
+### Example - Using the `.widget-function()` Callback
 In the LESS stylesheet, call `.widget-function()`:
 ```less
 .widget-function( 'my_widget_function', 'use_blue' );

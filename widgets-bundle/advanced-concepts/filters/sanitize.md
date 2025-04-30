@@ -1,4 +1,4 @@
-# Sanitize instance filter
+# Sanitize Instance Filter
 
 The sanitization filter is the last filter run on the widget instance before we store it in the database. The Widgets Bundle does a lot of filtering, but you might want to add some custom sanitization.
 

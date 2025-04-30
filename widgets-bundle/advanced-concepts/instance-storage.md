@@ -50,7 +50,7 @@ If your widget has `instance_storage` enabled, then your widget template files w
 <input type="hidden" name="storage_hash" value="<?php echo esc_attr($storage_hash) ?>" />
 ```
 
-### Retreiving Instance Storage
+### Retrieving Instance Storage
 
 You're free to handle the user's form details however you want, but you'll need to call `$this->get_stored_instance( $storage_hash );`. The easiest way to handle a request would be to create an [ajax handler](https://codex.wordpress.org/AJAX_in_Plugins).
 

@@ -1,4 +1,4 @@
-# Enqueue admin scripts action
+# Enqueue Admin Scripts Action
 
 This action gives you a chance to enqueue any additional admin scripts and styles for a widget. If you need to enqueue scripts for your custom widgets, you can read about that in our getting started section on [initializing a widget](../../getting-started/initializing-a-widget.md). This action is mainly for enqueuing additional scripts and styles for a widget that you're extending.
 

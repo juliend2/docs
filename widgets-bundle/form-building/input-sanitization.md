@@ -1,4 +1,5 @@
 # Sanitization
+
 The `SiteOrigin_Widget` abstract base class sanitizes all widget instance input fields using it's `sanitize` function. The sanitization method varies for different field types and additional sanitization may be done using filters.
 
 >Note: We have included a wrapper for the built-in WordPress `esc_url_raw()` function, named `sow_esc_url_raw()`. It performs the same function, but additionally allows the "skype:" URL protocol and our own "post:" protocol which we convert into a real URL using the specified post ID.

@@ -1,4 +1,4 @@
-# Frontend widget instance filter
+# Frontend Widget Instance Filter
 
 This filter allows you to modify the widget instance before the Widgets Bundle renders your widget. This instance is the version that the Widgets Bundle passes to the `get_less_variables` and `get_template_variables`. This filter allows you to modify the instance on the frontend without effecting the instance that's handled by the forms or stored in the database.
 

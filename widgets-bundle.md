@@ -1,4 +1,4 @@
-# Widgets bundle developer docs
+# Widgets Bundle Developer Docs
 
 The SiteOrigin Widgets Bundle is far more than just a collection of widgets. It's a foundation you can use to create widgets in a fraction of the time. It features powerful form building, data handling and templating. The core of the Widgets Bundle handles everything for you, so you can focus your efforts on building beautiful widgets.
 
@@ -8,35 +8,35 @@ These developer docs will teach you everything you need to know to build on top 
 
 ## Topics
 
-### Getting started
-* [Creating a widget](widgets-bundle/getting-started/creating-a-widget.md)
-* [Extending existing widgets](widgets-bundle/getting-started/extending-existing-widgets.md)
-* [Initializing a widget](widgets-bundle/getting-started/initializing-a-widget.md)
+### Getting Started
+* [Creating a Widget](widgets-bundle/getting-started/creating-a-widget.md)
+* [Extending Existing Widgets](widgets-bundle/getting-started/extending-existing-widgets.md)
+* [Initializing a Widget](widgets-bundle/getting-started/initializing-a-widget.md)
 
-### Form building
-* [Form fields](widgets-bundle/form-building/form-fields.md)
-* [Repeaters and sections](widgets-bundle/form-building/repeaters-and-sections.md)
+### Form Building
+* [Form Fields](widgets-bundle/form-building/form-fields.md)
+* [Repeaters and Sections](widgets-bundle/form-building/repeaters-and-sections.md)
 * [Presets](widgets-bundle/form-building/presets.md)
-* [Post selector](widgets-bundle/form-building/post-selector.md)
-* [Input sanitization](widgets-bundle/form-building/input-sanitization.md)
-* [Icons and fonts](widgets-bundle/form-building/icons-and-fonts.md)
-* [Adding custom fields](widgets-bundle/form-building/adding-custom-fields.md)
-* [Modifying forms](widgets-bundle/form-building/modifying-forms.md)
-* [State emitters](widgets-bundle/form-building/state-emitters.md)
-* [Overriding form fields](widgets-bundle/form-building/overriding-form-fields.md)
+* [Post Selector](widgets-bundle/form-building/post-selector.md)
+* [Input Sanitization](widgets-bundle/form-building/input-sanitization.md)
+* [Icons and Fonts](widgets-bundle/form-building/icons-and-fonts.md)
+* [Adding Custom Fields](widgets-bundle/form-building/adding-custom-fields.md)
+* [Modifying Forms](widgets-bundle/form-building/modifying-forms.md)
+* [State Emitters](widgets-bundle/form-building/state-emitters.md)
+* [Overriding Form Fields](widgets-bundle/form-building/overriding-form-fields.md)
 * [Link Form Field Filters](widgets-bundle/form-building/link-form-field-filters.md)
 * [Global Widget Settings](widgets-bundle/form-building/global-widget-settings.md)
 
 ### Templating
-* [HTML templates](widgets-bundle/templating/html-templates.md)
-* [LESS stylesheets](widgets-bundle/templating/less-stylesheets.md)
+* [HTML Templates](widgets-bundle/templating/html-templates.md)
+* [LESS Stylesheets](widgets-bundle/templating/less-stylesheets.md)
 
-### Advanced concepts
-* [Instance storage](widgets-bundle/advanced-concepts/instance-storage.md)
-* [Hooks and filters](widgets-bundle/advanced-concepts/hooks-and-filters.md)
-* [Post meta boxes for widget data](widgets-bundle/advanced-concepts/post-meta-box-forms.md)
+### Advanced Concepts
+* [Instance Storage](widgets-bundle/advanced-concepts/instance-storage.md)
+* [Hooks and Filters](widgets-bundle/advanced-concepts/hooks-and-filters.md)
+* [Post Meta Boxes for Widget Data](widgets-bundle/advanced-concepts/post-meta-box-forms.md)
 
 ### Tutorials
-* [Hello world!](widgets-bundle/tutorials/hello-world.md)
-* [Adding custom styles to a button widget](widgets-bundle/tutorials/adding-custom-styles-to-a-button-widget.md)
-* [Changing form structure](widgets-bundle/tutorials/changing-form-structure.md)
+* [Hello World!](widgets-bundle/tutorials/hello-world.md)
+* [Adding Custom Styles to a Button Widget](widgets-bundle/tutorials/adding-custom-styles-to-a-button-widget.md)
+* [Changing Form Structure](widgets-bundle/tutorials/changing-form-structure.md)
