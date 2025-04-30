@@ -1,4 +1,4 @@
-# Widget CSS filter
+# Widget CSS Filter
 
 This filter gives you access to the raw CSS generated from the widgets LESS stylesheets.
 

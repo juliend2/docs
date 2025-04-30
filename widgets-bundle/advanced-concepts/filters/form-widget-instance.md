@@ -1,4 +1,4 @@
-# Form widget instance filter
+# Form Widget Instance Filter
 
 This filter allows you to modify the widget instance before its displayed by the form. There are a few cases where you might want to use this. One example is when you change the structure of your widget form, and you want to convert old widget data to new widget data.
 

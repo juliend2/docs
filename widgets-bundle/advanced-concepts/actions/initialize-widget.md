@@ -1,4 +1,4 @@
-# Initialize widget action
+# Initialize Widget Action
 
 This action is triggered right after the core Widgets Bundle has run all its initialization actions for the specified widget. The intention is that this will allow you to additional adjustments that couldn't necessarily be done until after the widget been inititalization.
 

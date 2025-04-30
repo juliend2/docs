@@ -1,4 +1,4 @@
-# LESS content filter
+# LESS Content Filter
 
 You're able to access a widget's LESS prior to it being converted to CSS by using the `'siteorigin_widgets_less_' . $this->id_base` filter. This filter runs _after_ the LESS variables from the widget instance have been injected.
 

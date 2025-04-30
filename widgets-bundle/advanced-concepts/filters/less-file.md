@@ -1,4 +1,4 @@
-# LESS file filter
+# LESS File Filter
 
 This filter gives you a way to change the LESS file that's being used to create your widget style. We use this filter in our section on [extending existing widgets](../../getting-started/extending-existing-widgets.md). This guide will give you the best idea of what this filter is for and how you'll likely be using it.
 

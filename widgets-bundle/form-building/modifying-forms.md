@@ -1,8 +1,8 @@
-# Modifying forms
+# Modifying Forms
 
 For the most part, you'll be creating your forms using the standard [forms array](./form-fields.md). There are times, however, that you'll want to modify the form at a later stage. There are a few use cases for this. You might want to extend the functionality of an existing widget in the Widgets Bundle, or extend the functionality of a widget you've created.
 
-## Modifying a form within a widget
+## Modifying a Form Within a Widget
 
 The `SiteOrigin_Widget` class has a placeholder function called `modify_form`. By default, this function just returns the $form array unchanged, but you can override this in your class to do whatever you like.
 
@@ -36,7 +36,7 @@ class MyCustomWidget extends SiteOrigin_Widget {
 }
 ```
 
-## Using a WordPress filter
+## Using a WordPress Filter
 
 The Widgets Bundle also passes your form array through a few filters before ever using it. This allows you to modify the array outside the widget itself.
 
@@ -60,7 +60,7 @@ function mytheme_filter_widget_form($form_options, $widget){
 add_filter('siteorigin_widgets_form_options_sow-button', 'mytheme_filter_widget_form', 10, 2);
 ```
 
-## Modifying a child widget form
+## Modifying a Child Widget Form
 
 The Widgets Bundle has a concept of a child widget. This is a widget that's included in the form of another widget. The Call-to-action widget, for example, includes a button widget. Rather than completely recreate the button functionality in the Call-to-action widget, it just includes the button widget as a child widget field.
 

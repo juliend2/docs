@@ -1,4 +1,5 @@
 # Stopping Output of Row or Widget
+
 There are situations where you may wish to stop the output of a row or widget, and you can do this using the `siteorigin_panels_output_row` and `siteorigin_panels_output_widget` filters. While it's possible to remove them using other methods (such as filtering the panels_data array), those methods will require additional adjustments to account for Page Builder CSS to prevent ID mismatches.
 
 ### Filter: siteorigin_panels_output_row

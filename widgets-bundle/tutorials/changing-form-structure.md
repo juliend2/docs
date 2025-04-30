@@ -1,4 +1,5 @@
-# Changing form structure
+# Changing Form Structure
+
 Creating a widget is an iterative process. A form structure that might have made sense at one stage might need to be improved as your widget evolves. To handle these cases the `SiteOrigin_Widget` class provides the `modify_instance()` method, which you can override to transform a widget instance from the old structure to the new one.
 
 ## Updating form_options

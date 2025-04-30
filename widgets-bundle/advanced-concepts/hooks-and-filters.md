@@ -1,4 +1,4 @@
-# Hooks and filters
+# Hooks and Filters
 
 The SiteOrigin Widgets Bundle gives you ample opportunity to extend and enhance the functionality of the bundle. We've already covered a lot of these filters in other sections of this documentation. This page just serves as a general reference.
 
@@ -6,16 +6,16 @@ The SiteOrigin Widgets Bundle gives you ample opportunity to extend and enhance 
 
 * [Version Update](actions/version-update.md) `'siteorigin_widgets_version_update'` - Triggered when the Widgets Bundle core is updated.
 * [Initialize Widget](actions/initialize-widget.md) `'siteorigin_widgets_initialize_widget_' . $this->id_base` - Triggered after each `SiteOrigin_Widget` is initialized.
-* [Enqueue admin scripts](actions/enqueue-admin-scripts.md) `'siteorigin_widgets_enqueue_admin_scripts_' . $this->id_base` - Gives widgets a chance to enqueue their scripts.
-* [Enqueue frontend scripts](actions/enqueue-frontend-scripts.md) `'siteorigin_widgets_enqueue_frontend_scripts_' . $this->id_base` - Gives widgets a chance to enqueue their frontend scripts and styles.
+* [Enqueue Admin Scripts](actions/enqueue-admin-scripts.md) `'siteorigin_widgets_enqueue_admin_scripts_' . $this->id_base` - Gives widgets a chance to enqueue their scripts.
+* [Enqueue Frontend Scripts](actions/enqueue-frontend-scripts.md) `'siteorigin_widgets_enqueue_frontend_scripts_' . $this->id_base` - Gives widgets a chance to enqueue their frontend scripts and styles.
 
 ## Filters
 
-* [Widget folders](filters/widget-folders.md) `'siteorigin_widgets_widget_folders'` - Add folders where Widgets Bundle will look for widgets.
-* [Active widgets](filters/active-widgets.md) `'siteorigin_widgets_active_widgets'` - Filter which widgets are currently active.
-* [Menu capability](filters/admin-capability.md) `'siteorigin_widgets_admin_menu_capability'` - Change the capability required to enable/disable widgets.
+* [Widget Folders](filters/widget-folders.md) `'siteorigin_widgets_widget_folders'` - Add folders where Widgets Bundle will look for widgets.
+* [Active Widgets](filters/active-widgets.md) `'siteorigin_widgets_active_widgets'` - Filter which widgets are currently active.
+* [Menu Capability](filters/admin-capability.md) `'siteorigin_widgets_admin_menu_capability'` - Change the capability required to enable/disable widgets.
 
-### Widget modifications
+### Widget Modifications
 
 * [Form Options](filters/form-options.md) `'siteorigin_widgets_form_options_' . $this->id_base` - Modify the form array.
 * [Frontend Widget Instance](filters/widget-instance.md) `'siteorigin_widgets_instance_' . $this->id_base` - Filter the widget instance before it's rendered.

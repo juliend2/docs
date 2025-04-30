@@ -1,4 +1,4 @@
-# Getting started quickly
+# Getting Started Quickly
 
 The quickest and simplest way to get started is by making sure you have the [SiteOrigin Widgets Bundle](https://wordpress.org/plugins/so-widgets-bundle/) plugin installed and activated and then cloning our [so-dev-examples](https://github.com/siteorigin/so-dev-examples) git repository. In the `extend-widgets-bundle` plugin (remember to activate it under Plugins), you'll find the Hello World Widget, which can be used as a template. All you need to do is create a copy of the `hello-world-widget` folder and rename it as follows:
 
@@ -11,7 +11,7 @@ The quickest and simplest way to get started is by making sure you have the [Sit
 
 You should now have a simple, functional widget that you can start changing to create your awesome widget!
 
-## Adding a separate widgets folder
+## Adding a Separate Widgets Folder
 
 If you'd like to keep your widgets separate from the SiteOrigin widgets, we have included a filter hook that you can use to register a folder containing several of your widgets, as follows:
 

@@ -1,4 +1,5 @@
 # Image Size
+
 The image size field allows the user to specifically select a desired [image size](https://developer.wordpress.org/reference/functions/add_image_size/). This gives the user option of using a larger, or smaller image based on the context the widget is being used in rather than enforcing a specific size of the image (for example, `thumbnail` or `full`).
 
 ## Example

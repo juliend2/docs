@@ -1,4 +1,4 @@
-# Form options filter
+# Form Options Filter
 
 The form filter is an incredibly useful filter for changing the fields of an existing widget form. You can use this to enhance the widgets currently in Widgets Bundle, or you can enhance widgets you've added. Maybe you want to add enhanced functionality in a premium version of your plugin.
 

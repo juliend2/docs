@@ -1,4 +1,4 @@
-# Template variables filter
+# Template Variables Filter
 
 For you to understand this filter, it's best to look at the context in which it runs. The widgets bundle passes the widget instance to the `get_template_variables` function. This function is the one your plugin should override to return an array of variables that the Widgets Bundle will pass through `extract` to make them available for your widget template.
 

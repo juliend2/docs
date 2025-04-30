@@ -1,4 +1,4 @@
-# Widget folders filter
+# Widget Folders Filter
 
 This filter gives you a way to add extra folders to the Widgets Bundle. It searches these folders for new widgets when the user goes to Plugins > SiteOrigin Widgets and checks these folders when widgets are active.
 
