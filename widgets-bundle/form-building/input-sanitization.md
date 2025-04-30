@@ -11,7 +11,7 @@ If the selected value is not present in the list of values originally presented 
 
 ### Number and slider fields
 The input value must be a number, so the value is simply typecast to float.
- 
+
 ### Textarea and text fields
 The value is sanitized using two WordPress sanitization functions, namely `wp_kses_post()` followed by a forced `balanceTags()` call. This allows users to input some HTML tags, but not JavaScript and attempts to fix any mistakes made by users when inputting HTML tags.
 
@@ -22,7 +22,7 @@ The value is checked against a regular expression pattern which ensures the valu
 The value should be an integer so is passed through the `intval()` function. Additionally, if the optional 'fallback' URL is specified, it is escaped using the built-in WordPress function `esc_url_raw()`.
 
 ### Link fields
-The value is stripped of leading and trailing whitespace and then checked against a regular expression which ensures the value starts with 'post:' followed by at least one digit. If it does not match the required pattern it is assumed to be a URL and escaped using the built-in WordPress function `esc_url_raw()`. 
+The value is stripped of leading and trailing whitespace and then checked against a regular expression which ensures the value starts with 'post:' followed by at least one digit. If it does not match the required pattern it is assumed to be a URL and escaped using the built-in WordPress function `esc_url_raw()`.
 
 ### Checkbox fields
 If the value is any non-empty value it is set to true, otherwise it is set to false.
@@ -49,13 +49,13 @@ Additionally, a 'sanitize' option may be set on form options to specify extra sa
 $form_options = array(
 	'some_url' => array(
 		'type' => 'link',
-		'label' => __('Some URL goes here', 'widget-form-fields-text-domain'),
+		'label' => __( 'Some URL goes here', 'siteorigin-docs' ),
 		'sanitize' => 'url',
 	),
 	'some_email_address' => array(
-	    'type' => 'text',
-	    'label' => __( 'Some email address goes here', 'widget-form-fields-text-domain' ),
-	    'sanitize' => 'email',
+		'type' => 'text',
+		'label' => __( 'Some email address goes here', 'siteorigin-docs' ),
+		'sanitize' => 'email',
 	),
 );
 ```
@@ -65,22 +65,22 @@ If any other string is specified for the 'sanitize' option, it is assumed to be 
 ### Example - custom sanitization options
 ```php
 function __construct() {
-    $form_options = array(
-        'some_date' => array(
-            'type' => 'text',
-            'label' => __( 'Some date goes here', 'widget-form-fields-text-domain' ),
-            'sanitize' => 'date',
-        ),
-    );
-    // Parent constructor is called with $form_options here.
+	$form_options = array(
+		'some_date' => array(
+			'type' => 'text',
+			'label' => __( 'Some date goes here', 'siteorigin-docs' ),
+			'sanitize' => 'date',
+		),
+	);
+	// Parent constructor is called with $form_options here.
 }
 
 add_filter( 'siteorigin_widgets_sanitize_field_date', array( $this, 'sanitize_date' ) );
 
 function sanitize_date( $date_to_sanitize ) {
-    // Perform custom date sanitization here.
-    $sanitized_date = sanitize_text_field( $date_to_sanitize );
-    return $sanitized_date;
+	// Perform custom date sanitization here.
+	$sanitized_date = sanitize_text_field( $date_to_sanitize );
+	return $sanitized_date;
 }
 ```
 

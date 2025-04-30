@@ -14,7 +14,7 @@ class MyCustomWidget extends SiteOrigin_Widget {
 		// We can modify this $form array however we want
 		$form['test_field'] = array(
 			'type' => 'text',
-			'label' => __('Test Field', 'my-theme'),
+			'label' => __( 'Test Field', 'siteorigin-docs' ),
 		);
 		return $form;
 	}
@@ -27,12 +27,12 @@ The `modify_form` function is only ever called when the Widgets Bundle needs the
 
 ```php
 class MyCustomWidget extends SiteOrigin_Widget {
-    // We're leaving out all the setup code here
+	// We're leaving out all the setup code here
 
-    function modify_form( $form ) {
-        $form['my_field']['options'] = include( 'data-file.php' );
-        return $form;
-    }
+	function modify_form( $form ) {
+		$form['my_field']['options'] = include( 'data-file.php' );
+		return $form;
+	}
 }
 ```
 
@@ -48,16 +48,19 @@ $form_options = apply_filters( 'siteorigin_widgets_form_options_' . $this->id_ba
 Both of these are quite easy to hook into. If you're using the `siteorigin_widgets_form_options` filter, then your function should check that the 2nd argument is the class you want to filter. The other filter will only run for one specific widget type.
 
 ```php
-function mytheme_filter_widget_form($form_options, $widget){
-    // This first line isn't necessary, but it's here for demonstration.
-    if( get_class($widget) != 'SiteOrigin_Widget_Button_Widget' ) return $form_options;
+function mytheme_filter_widget_form( $form_options, $widget ) {
+	// This first line isn't necessary, but it's here for demonstration.
+	if ( get_class( $widget ) != 'SiteOrigin_Widget_Button_Widget' ) {
+		return $form_options;
+	}
 
-    if( !empty($form_options['design']['fields']['theme']['options']) ) {
-        $form_options['design']['fields']['theme']['options']['test'] = __('Test Style', 'mytheme');
-    }
-    return $form_options;
+	if ( ! empty( $form_options['design']['fields']['theme']['options'] ) ) {
+		$form_options['design']['fields']['theme']['options']['test'] = __( 'Test Style', 'siteorigin-docs' );
+	}
+
+	return $form_options;
 }
-add_filter('siteorigin_widgets_form_options_sow-button', 'mytheme_filter_widget_form', 10, 2);
+add_filter( 'siteorigin_widgets_form_options_sow-button', 'mytheme_filter_widget_form', 10, 2 );
 ```
 
 ## Modifying a Child Widget Form
@@ -68,13 +71,14 @@ In this case though, there might be some fields in the child widget that aren't 
 
 ```php
 class SiteOrigin_Widget_Cta_widget extends SiteOrigin_Widget {
-    // Everything else goes here
+	// Everything else goes here.
 
-    function modify_child_widget_form($child_widget_form, $child_widget) {
-        // We could also check $child_widget if we're including different types of child widgets
-        unset( $child_widget_form['design']['fields']['align'] );
-        return $child_widget_form;
-    }
+	function modify_child_widget_form( $child_widget_form, $child_widget ) {
+		// We could also check $child_widget if we're including different types of child widgets.
+		unset( $child_widget_form['design']['fields']['align'] );
+
+		return $child_widget_form;
+	}
 }
 ```
 

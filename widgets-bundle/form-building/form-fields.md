@@ -32,7 +32,7 @@ Form options input:
 $form_options = array(
 	'some_text' => array(
 		'type' => 'text',
-		'label' => __('Some text goes here', 'widget-form-fields-text-domain'),
+		'label' => __( 'Some text goes here', 'siteorigin-docs' ),
 		'default' => 'Some default text.'
 	)
 );
@@ -60,7 +60,7 @@ Form options input:
 $form_options = array(
 	'some_url' => array(
 		'type' => 'link',
-		'label' => __('Some URL goes here', 'widget-form-fields-text-domain'),
+		'label' => __( 'Some URL goes here', 'siteorigin-docs' ),
 		'default' => 'http://www.example.com'
 	)
 );
@@ -83,7 +83,7 @@ Form options input:
 $form_options = array(
 	'some_color' => array(
 		'type' => 'color',
-		'label' => __( 'Choose a color', 'widget-form-fields-text-domain' ),
+		'label' => __( 'Choose a color', 'siteorigin-docs' ),
 		'default' => '#bada55'
 	)
 );
@@ -111,7 +111,7 @@ Form options input:
 $form_options = array(
 	'some_number' => array(
 		'type' => 'number',
-		'label' => __( 'Enter a number', 'widget-form-fields-text-domain' ),
+		'label' => __( 'Enter a number', 'siteorigin-docs' ),
 		'default' => '12654',
 		'unit' => 'px',
 	)
@@ -140,7 +140,7 @@ Form options input:
 $form_options = array(
 	'example_size' => array(
 		'type' => 'measurement',
-		'label' => __('Size', 'widget-form-fields-text-domain'),
+		'label' => __( 'Size', 'siteorigin-docs' ),
 		'default' => '10px',
 	)
 );
@@ -172,19 +172,19 @@ $form_options = array(
 		'default' => '5% 0px 25px 0px',
 		'measurements' => array(
 			'top' => array(
-				'label' => __( 'Padding Top', 'widget-form-fields-text-domain' ),
+				'label' => __( 'Padding Top', 'siteorigin-docs' ),
 				'units' => $useable_units,
 			),
 			'right' => array(
-				'label' => __( 'Padding Right', 'widget-form-fields-text-domain' ),
+				'label' => __( 'Padding Right', 'siteorigin-docs' ),
 				'units' => $useable_units,
 			),
 			'bottom' => array(
-				'label' => __( 'Padding Bottom', 'widget-form-fields-text-domain' ),
+				'label' => __( 'Padding Bottom', 'siteorigin-docs' ),
 				'units' => $useable_units,
 			),
 			'left' => array(
-				'label' => __( 'Padding Left', 'widget-form-fields-text-domain' ),
+				'label' => __( 'Padding Left', 'siteorigin-docs' ),
 				'units' => $useable_units,
 			),
 		),
@@ -219,7 +219,7 @@ Form options input:
 $form_options = array(
 	'images' => array(
 		'type' => 'multiple_media',
-		'label' => __( 'Multiple Media', 'widget-form-fields-text-domain' ),
+		'label' => __( 'Multiple Media', 'siteorigin-docs' ),
 		'library' => 'image',
 		'thumbnail_dimensions' => array( 64, 64 ),
 		'title' => true,
@@ -245,7 +245,7 @@ Form options input:
 $form_options = array(
 	'some_long_message' => array(
 		'type' => 'textarea',
-		'label' => __( 'Type a message', 'widget-form-fields-text-domain' ),
+		'label' => __( 'Type a message', 'siteorigin-docs' ),
 		'default' => 'An example of a long message.</br>It is even possible to add a few html tags.</br><a href="siteorigin.com" target="_blank"">Links!</a></br><strong>Strong</strong> and <em>emphasized</em> text.',
 		'rows' => 10
 	)
@@ -266,29 +266,29 @@ Renders a TinyMCE editor field.
 - media_buttons: `bool` Whether to add the Add Media button. The default is `true`.
 - editor_height: `int` The initial height of the editor. Setting this will cause the rows option to be ignored.
 - button_filters: `array` An array of filter callbacks to filter the buttons available on the TinyMCE visual editor and the Quicktags HTML editor. The TinyMCE editor can display up to four rows of buttons and the Quicktags editor displays a single row of buttons. Each row can be filtered by specifying a corresponding callback, as follows:
-  * First row: `'mce_buttons'`
-  * Second row: `'mce_buttons_2'`
-  * Third row: `'mce_buttons_3'`
-  * Fourth row: `'mce_buttons_4'`
-  * Quicktags settings: `'quicktags_settings'`
+	* First row: `'mce_buttons'`
+	* Second row: `'mce_buttons_2'`
+	* Third row: `'mce_buttons_3'`
+	* Fourth row: `'mce_buttons_4'`
+	* Quicktags settings: `'quicktags_settings'`
 
 #### Example
 Form options input:
 ```php
 $form_options = array(
 	'some_tinymce_editor' => array(
-        'type' => 'tinymce',
-        'label' => __( 'Visually edit, richly.', 'widget-form-fields-text-domain' ),
-        'default' => 'An example of a long message.</br>It is even possible to add a few html tags.</br><a href="siteorigin.com" target="_blank"">Links!</a>',
-        'rows' => 10,
-        'default_editor' => 'html',
-        'button_filters' => array(
-            'mce_buttons' => array( $this, 'filter_mce_buttons' ),
-            'mce_buttons_2' => array( $this, 'filter_mce_buttons_2' ),
-            'mce_buttons_3' => array( $this, 'filter_mce_buttons_3' ),
-            'mce_buttons_4' => array( $this, 'filter_mce_buttons_5' ),
-            'quicktags_settings' => array( $this, 'filter_quicktags_settings' ),
-        ),
+		'type' => 'tinymce',
+		'label' => __( 'Visually edit, richly.', 'siteorigin-docs' ),
+		'default' => 'An example of a long message.</br>It is even possible to add a few html tags.</br><a href="siteorigin.com" target="_blank"">Links!</a>',
+		'rows' => 10,
+		'default_editor' => 'html',
+		'button_filters' => array(
+			'mce_buttons' => array( $this, 'filter_mce_buttons' ),
+			'mce_buttons_2' => array( $this, 'filter_mce_buttons_2' ),
+			'mce_buttons_3' => array( $this, 'filter_mce_buttons_3' ),
+			'mce_buttons_4' => array( $this, 'filter_mce_buttons_5' ),
+			'quicktags_settings' => array( $this, 'filter_quicktags_settings' ),
+		),
 	)
 );
 ```
@@ -312,7 +312,7 @@ Form options input:
 $form_options = array(
 	'some_number_in_a_range' => array(
 		'type' => 'slider',
-		'label' => __( 'Choose a number', 'widget-form-fields-text-domain' ),
+		'label' => __( 'Choose a number', 'siteorigin-docs' ),
 		'default' => 24,
 		'min' => 2,
 		'max' => 37,
@@ -340,11 +340,11 @@ Form options input:
 $form_options = array(
 	'ordering' => array(
 		'type' => 'order',
-		'label' => __( 'Element Order', 'widget-form-fields-text-domain' ),
+		'label' => __( 'Element Order', 'siteorigin-docs' ),
 		'options' => array(
-			'section' => __( 'Section', 'widget-form-fields-text-domain' ),
-			'divider' => __( 'Content', 'widget-form-fields-text-domain' ),
-			'other section' => __( 'Other Section', 'widget-form-fields-text-domain' ),
+			'section' => __( 'Section', 'siteorigin-docs' ),
+			'divider' => __( 'Content', 'siteorigin-docs' ),
+			'other section' => __( 'Other Section', 'siteorigin-docs' ),
 		),
 		'default' => array( 'section', 'divider', 'other section' ),
 	),
@@ -370,12 +370,12 @@ Form options input:
 $form_options = array(
 	'some_selection' => array(
 		'type' => 'select',
-		'label' => __( 'Choose a thing from a long list of things', 'widget-form-fields-text-domain' ),
+		'label' => __( 'Choose a thing from a long list of things', 'siteorigin-docs' ),
 		'default' => 'the_other_thing',
 		'options' => array(
-			'this_thing' => __( 'This thing', 'widget-form-fields-text-domain' ),
-			'that_thing' => __( 'That thing', 'widget-form-fields-text-domain' ),
-			'the_other_thing' => __( 'The other thing', 'widget-form-fields-text-domain' ),
+			'this_thing' => __( 'This thing', 'siteorigin-docs' ),
+			'that_thing' => __( 'That thing', 'siteorigin-docs' ),
+			'the_other_thing' => __( 'The other thing', 'siteorigin-docs' ),
 		)
 	)
 );
@@ -390,11 +390,11 @@ Form options input:
 $form_options = array(
 	'another_selection' => array(
 		'type' => 'select',
-		'prompt' => __( 'Choose a thing from a long list of things', 'widget-form-fields-text-domain' ),
+		'prompt' => __( 'Choose a thing from a long list of things', 'siteorigin-docs' ),
 		'options' => array(
-			'this_thing' => __( 'This thing', 'widget-form-fields-text-domain' ),
-			'that_thing' => __( 'That thing', 'widget-form-fields-text-domain' ),
-			'the_other_thing' => __( 'The other thing', 'widget-form-fields-text-domain' ),
+			'this_thing' => __( 'This thing', 'siteorigin-docs' ),
+			'that_thing' => __( 'That thing', 'siteorigin-docs' ),
+			'the_other_thing' => __( 'The other thing', 'siteorigin-docs' ),
 		)
 	)
 );
@@ -409,13 +409,13 @@ Form options input:
 $form_options = array(
 	'another_selection' => array(
 		'type' => 'select',
-		'label' => __( 'Choose a thing from a long list of things', 'widget-form-fields-text-domain' ),
+		'label' => __( 'Choose a thing from a long list of things', 'siteorigin-docs' ),
 		'multiple' => true,
 		'default' => 'the_other_thing',
 		'options' => array(
-			'this_thing' => __( 'This thing', 'widget-form-fields-text-domain' ),
-			'that_thing' => __( 'That thing', 'widget-form-fields-text-domain' ),
-			'the_other_thing' => __( 'The other thing', 'widget-form-fields-text-domain' ),
+			'this_thing' => __( 'This thing', 'siteorigin-docs' ),
+			'that_thing' => __( 'That thing', 'siteorigin-docs' ),
+			'the_other_thing' => __( 'The other thing', 'siteorigin-docs' ),
 		)
 	)
 );
@@ -435,7 +435,7 @@ Form options input:
 $form_options = array(
 	'some_boolean' => array(
 		'type' => 'checkbox',
-		'label' => __( 'Allow this thing?', 'widget-form-fields-text-domain' ),
+		'label' => __( 'Allow this thing?', 'siteorigin-docs' ),
 		'default' => true
 	)
 );
@@ -459,11 +459,11 @@ Form options input:
 $form_options = array(
 	'potential_options' => array(
 		'type' => 'checkboxes',
-		'label' => __( 'Allow this thing?', 'widget-form-fields-text-domain' ),
+		'label' => __( 'Allow this thing?', 'siteorigin-docs' ),
 		'options' => array(
-			'option' =>  __( 'value', 'widget-form-fields-text-domain' ),
-			'other option' =>  __( 'other value', 'widget-form-fields-text-domain' ),
-			'another additional option' => __( 'Another possible value', 'widget-form-fields-text-domain' )
+			'option' =>  __( 'value', 'siteorigin-docs' ),
+			'other option' =>  __( 'other value', 'siteorigin-docs' ),
+			'another additional option' => __( 'Another possible value', 'siteorigin-docs' )
 		),
 	)
 );
@@ -485,12 +485,12 @@ Form options input:
 $form_options = array(
 	'radio_selection' => array(
 		'type' => 'radio',
-		'label' => __( 'Choose a thing from a short list of things', 'widget-form-fields-text-domain' ),
+		'label' => __( 'Choose a thing from a short list of things', 'siteorigin-docs' ),
 		'default' => 'that_thing',
 		'options' => array(
-			'this_thing' => __( 'This thing', 'widget-form-fields-text-domain' ),
-			'that_thing' => __( 'That thing', 'widget-form-fields-text-domain' ),
-			'the_other_thing' => __( 'The other thing', 'widget-form-fields-text-domain' )
+			'this_thing' => __( 'This thing', 'siteorigin-docs' ),
+			'that_thing' => __( 'That thing', 'siteorigin-docs' ),
+			'the_other_thing' => __( 'The other thing', 'siteorigin-docs' )
 		)
 	)
 );
@@ -518,9 +518,9 @@ Form options input:
 $form_options = array(
 	'some_media' => array(
 		'type' => 'media',
-		'label' => __( 'Choose a media thing', 'widget-form-fields-text-domain' ),
-		'choose' => __( 'Choose image', 'widget-form-fields-text-domain' ),
-		'update' => __( 'Set image', 'widget-form-fields-text-domain' ),
+		'label' => __( 'Choose a media thing', 'siteorigin-docs' ),
+		'choose' => __( 'Choose image', 'siteorigin-docs' ),
+		'update' => __( 'Set image', 'siteorigin-docs' ),
 		'library' => 'image',
 		'fallback' => true
 	)
@@ -546,7 +546,7 @@ _This field requires at least WordPress 2.9._
 $form_options = array(
 	'size' => array(
 		'type' => 'image-size',
-		'label' => __( 'Image size', 'widget-form-fields-text-domain' ),
+		'label' => __( 'Image size', 'siteorigin-docs' ),
 	)
 );
 ```
@@ -598,7 +598,7 @@ $form_options = array(
 	'some_posts' => array(
 		'type' => 'posts',
 		'show_count' => true,
-		'label' => __('Some posts query', 'widget-form-fields-text-domain'),
+		'label' => __( 'Some posts query', 'siteorigin-docs' ),
 	)
 );
 ```
@@ -622,16 +622,16 @@ Form options input:
 $form_options = array(
 	'a_section' => array(
 		'type' => 'section',
-		'label' => __( 'A section containing related fields.' , 'widget-form-fields-text-domain' ),
+		'label' => __( 'A section containing related fields.' , 'siteorigin-docs' ),
 		'hide' => true,
 		'fields' => array(
 			'grouped_text' => array(
 				'type' => 'text',
-				'label' => __( 'A grouped text field', 'widget-form-fields-text-domain' )
+				'label' => __( 'A grouped text field', 'siteorigin-docs' )
 			),
 			'grouped_checkbox' => array(
 				'type' => 'checkbox',
-				'label' => __( 'A grouped checkbox', 'widget-form-fields-text-domain' )
+				'label' => __( 'A grouped checkbox', 'siteorigin-docs' )
 			)
 		)
 	)
@@ -661,20 +661,20 @@ add_filter( 'siteorigin_widgets_form_options_sow-editor', function( $form_option
 	$form_options['tabs'] = array(
 		'type' => 'tabs',
 		'tabs' => array(
-			'example_section' => __( 'Example Section', 'so-example' ),
-			'another_example' => __( 'Second Example', 'so-example' ),
+			'example_section' => __( 'Example Section', 'siteorigin-docs' ),
+			'another_example' => __( 'Second Example', 'siteorigin-docs' ),
 		),
 	);
 
 	$form_options['example_section'] = array(
 		'type' => 'section',
-		'label' => __( 'Example Section' , 'so-example' ),
+		'label' => __( 'Example Section' , 'siteorigin-docs' ),
 		'tab' => true,
 		'hide' => true,
 		'fields' => array(
 			'test' => array(
 				'type' => 'html',
-				'markup' => __( 'First tab', 'so-example' ),
+				'markup' => __( 'First tab', 'siteorigin-docs' ),
 			),
 		),
 	);
@@ -682,13 +682,13 @@ add_filter( 'siteorigin_widgets_form_options_sow-editor', function( $form_option
 
 	$form_options['another_example'] = array(
 		'type' => 'section',
-		'label' => __( 'The Tab label defined above will be output instead of this' , 'so-example' ),
+		'label' => __( 'The Tab label defined above will be output instead of this' , 'siteorigin-docs' ),
 		'tab' => true,
 		'hide' => true,
 		'fields' => array(
 			'test' => array(
 				'type' => 'html',
-				'markup' => __( 'Second tab', 'so-example' ),
+				'markup' => __( 'Second tab', 'siteorigin-docs' ),
 			),
 		),
 	);
@@ -722,8 +722,8 @@ Form options input:
 $form_options = array(
 	'a_repeater' => array(
 		'type' => 'repeater',
-		'label' => __( 'A repeating repeater.' , 'widget-form-fields-text-domain' ),
-		'item_name'  => __( 'Repeater item', 'siteorigin-widgets' ),
+		'label' => __( 'A repeating repeater.' , 'siteorigin-docs' ),
+		'item_name'  => __( 'Repeater item', 'siteorigin-docs' ),
 		'item_label' => array(
 			'selector'     => "[id*='repeat_text']",
 			'update_event' => 'change',
@@ -732,11 +732,11 @@ $form_options = array(
 		'fields' => array(
 			'repeat_text' => array(
 				'type' => 'text',
-				'label' => __( 'A text field in a repeater item.', 'widget-form-fields-text-domain' )
+				'label' => __( 'A text field in a repeater item.', 'siteorigin-docs' )
 			),
 			'repeat_checkbox' => array(
 				'type' => 'checkbox',
-				'label' => __( 'A checkbox in a repeater item.', 'widget-form-fields-text-domain' )
+				'label' => __( 'A checkbox in a repeater item.', 'siteorigin-docs' )
 			)
 		)
 	)
@@ -765,7 +765,7 @@ Form options input:
 $form_options = array(
 	'some_widget' => array(
 		'type' => 'widget',
-		'label' => __( 'Button Widget', 'widget-form-fields-text-domain' ),
+		'label' => __( 'Button Widget', 'siteorigin-docs' ),
 		'class' => 'SiteOrigin_Widget_Button_Widget',
 		'hide' => true
 	)
@@ -792,7 +792,7 @@ Form options input:
 $form_options = array(
 	'page_builder' => array(
 		'type' => 'builder',
-		'label' => __( 'Page Builder', 'widget-form-fields-text-domain'),
+		'label' => __( 'Page Builder', 'siteorigin-docs'),
 	)
 );
 ```
@@ -818,7 +818,7 @@ Form options input:
 $form_options = array(
 	'code_editor' => array(
 		'type' => 'code',
-		'label' => __( 'Code Editor', 'widget-form-fields-text-domain' ),
+		'label' => __( 'Code Editor', 'siteorigin-docs' ),
 	)
 );
 ```
@@ -840,7 +840,7 @@ Form options input:
 $form_options = array(
 	'some_icon' => array(
 		'type' => 'icon',
-		'label' => __('Select an icon', 'widget-form-fields-text-domain'),
+		'label' => __( 'Select an icon', 'siteorigin-docs' ),
 	)
 );
 ```
@@ -861,7 +861,7 @@ Form options input:
 $form_options = array(
 	'some_font' => array(
 		'type' => 'font',
-		'label' => __('Select a font', 'widget-form-fields-text-domain'),
+		'label' => __( 'Select a font', 'siteorigin-docs' ),
 	)
 );
 ```
@@ -890,7 +890,7 @@ Form options input:
 $form_options = array(
 	'presets' => array(
 		'type' => 'presets',
-		'label' => __( 'Theme', 'siteorigin-premium'),
+		'label' => __( 'Theme', 'siteorigin-docs' ),
 		'default_preset' => 'test-2',
 		'options' => array(
 			'test' => array( // Preset 1
@@ -938,12 +938,12 @@ add_filter( 'siteorigin_widgets_form_options_sow-editor', function( $form_option
 	// This go anywhere in the `$form_options` array.
 	$form_options['html_button_example'] = array(
 		'type' => 'html',
-		'markup' => '<span style="border: 1px solid #000; padding: 5px; margin: 21px; display: inline-block;">' . __( 'Box with inline styling', 'so-example' ) . '</span>',
+		'markup' => '<span style="border: 1px solid #000; padding: 5px; margin: 21px; display: inline-block;">' . __( 'Box with inline styling', 'siteorigin-docs' ) . '</span>',
 	);
 
 	$form_options['siteorigin_logo'] = array(
 		'type' => 'html',
-		'label' => __( 'SiteOrigin Logo HTML Example' , 'so-example' ),
+		'label' => __( 'SiteOrigin Logo HTML Example' , 'siteorigin-docs' ),
 		'markup' => '<img src="https://siteorigin.com/wp-content/themes/siteorigin-theme/images/logo/logo.svg" width="175" height="33">',
 	);
 
@@ -972,7 +972,7 @@ The Autocomplete field provides a list of posts or terms users that the user can
 $form_options = array(
 	'example' => array(
 		'type' => 'autocomplete',
-		'label' => __( 'Pages', 'siteorigin-premium'),
+		'label' => __( 'Pages', 'siteorigin-docs'),
 		'post_types' => array(
 			'page'
 		),
