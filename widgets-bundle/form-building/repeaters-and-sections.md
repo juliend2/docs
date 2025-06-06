@@ -93,6 +93,27 @@ In the above example the repeater has been configured to use the 'repeat_text' f
 Repeater containing two items using the `item_label` property:
 ![Widget Form Repeater 4](../images/form-field-type-repeater-4.png)
 
+### Limiting Repeater Items (`max_items`)
+
+Use the `max_items` option to cap how many items a repeater can contain. When the limit is reached, the **Add** button is disabled and no further items can be added.
+
+#### Example 3 – Limiting Items
+Form options input:
+```php
+$form_options = array(
+    'feature_list' => array(
+        'type'       => 'repeater',
+        'label'      => __( 'Feature list', 'widget-form-fields-text-domain' ),
+        'item_name'  => __( 'Feature', 'siteorigin-widgets' ),
+        'max_items'  => 3,  // Allow up to three features.
+        'fields'     => array(
+            'feature_text' => array(
+                'type'  => 'text',
+                'label' => __( 'Feature text', 'widget-form-fields-text-domain' ),
+            ),
+        ),
+    ),
+);
 
 ---
 
