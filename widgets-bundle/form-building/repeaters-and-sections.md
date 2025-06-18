@@ -10,16 +10,16 @@ Form options input:
 $form_options = array(
 	'a_repeater' => array(
 		'type' => 'repeater',
-		'label' => __( 'A repeating repeater.' , 'widget-form-fields-text-domain' ),
-		'item_name'  => __( 'Repeater item', 'siteorigin-widgets' ),
+		'label' => __( 'A repeating repeater.' , 'siteorigin-docs' ),
+		'item_name'  => __( 'Repeater item', 'siteorigin-docs' ),
 		'fields' => array(
 			'repeat_text' => array(
 				'type' => 'text',
-				'label' => __( 'A text field in a repeater item.', 'widget-form-fields-text-domain' )
+				'label' => __( 'A text field in a repeater item.', 'siteorigin-docs' )
 			),
 			'repeat_checkbox' => array(
 				'type' => 'checkbox',
-				'label' => __( 'A checkbox in a repeater item.', 'widget-form-fields-text-domain' )
+				'label' => __( 'A checkbox in a repeater item.', 'siteorigin-docs' )
 			)
 		)
 	)
@@ -67,8 +67,8 @@ Form options input:
 $form_options = array(
 	'a_repeater' => array(
 		'type' => 'repeater',
-		'label' => __( 'A repeating repeater.' , 'widget-form-fields-text-domain' ),
-		'item_name'  => __( 'Repeater item', 'siteorigin-widgets' ),
+		'label' => __( 'A repeating repeater.' , 'siteorigin-docs' ),
+		'item_name'  => __( 'Repeater item', 'siteorigin-docs' ),
 		'item_label' => array(
 			'selector'     => "[id*='repeat_text']",
 			'update_event' => 'change',
@@ -77,11 +77,11 @@ $form_options = array(
 		'fields' => array(
 			'repeat_text' => array(
 				'type' => 'text',
-				'label' => __( 'A text field in a repeater item.', 'widget-form-fields-text-domain' )
+				'label' => __( 'A text field in a repeater item.', 'siteorigin-docs' )
 			),
 			'repeat_checkbox' => array(
 				'type' => 'checkbox',
-				'label' => __( 'A checkbox in a repeater item.', 'widget-form-fields-text-domain' )
+				'label' => __( 'A checkbox in a repeater item.', 'siteorigin-docs' )
 			)
 		)
 	)
@@ -103,13 +103,13 @@ Form options input:
 $form_options = array(
     'feature_list' => array(
         'type'       => 'repeater',
-        'label'      => __( 'Feature list', 'widget-form-fields-text-domain' ),
-        'item_name'  => __( 'Feature', 'siteorigin-widgets' ),
+        'label'      => __( 'Feature list', 'siteorigin-docs' ),
+        'item_name'  => __( 'Feature', 'siteorigin-docs' ),
         'max_items'  => 3,  // Allow up to three features.
         'fields'     => array(
             'feature_text' => array(
                 'type'  => 'text',
-                'label' => __( 'Feature text', 'widget-form-fields-text-domain' ),
+                'label' => __( 'Feature text', 'siteorigin-docs' ),
             ),
         ),
     ),
@@ -126,16 +126,16 @@ Form options input:
 $form_options = array(
 	'a_section' => array(
 		'type' => 'section',
-		'label' => __( 'A section containing related fields.' , 'widget-form-fields-text-domain' ),
+		'label' => __( 'A section containing related fields.' , 'siteorigin-docs' ),
 		'hide' => true,
 		'fields' => array(
 			'grouped_text' => array(
 				'type' => 'text',
-				'label' => __( 'A grouped text field', 'widget-form-fields-text-domain' )
+				'label' => __( 'A grouped text field', 'siteorigin-docs' )
 			),
 			'grouped_checkbox' => array(
 				'type' => 'checkbox',
-				'label' => __( 'A grouped checkbox', 'widget-form-fields-text-domain' )
+				'label' => __( 'A grouped checkbox', 'siteorigin-docs' )
 			)
 		)
 	)
