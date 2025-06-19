@@ -1,10 +1,10 @@
 # Child Widgets
 
-Including a **child widget** (embedding one widget’s form and output inside another widget) lets you reuse existing widget functionality without duplicating form fields or front end code. A common example is the Call-to-Action widget, which embeds the Button widget instead of recreating every button field.
+Including a **child widget** (embedding one widget's form and output inside another widget) lets you reuse existing widget functionality without duplicating form fields or front end code. A common example is the Call-to-Action widget, which embeds the Button widget instead of recreating every button field.
 
 ## Defining a `widget` Form Field
 
-Add a field of **`type` => `widget`** to your widget’s `$form_options` array and specify the fully‑qualified PHP class name of the widget you want to embed.
+Add a field of **`type` => `widget`** to your widget's `$form_options` array and specify the fully-qualified PHP class name of the widget you want to embed.
 
 ```php
 $form_options = array(
@@ -27,9 +27,9 @@ if ( ! class_exists( 'SiteOrigin_Widget_Button_Widget' ) ) {
 }
 ```
 
-## Rendering the Child Widget on the Front‑End
+## Rendering the Child Widget on the Front-End
 
-The child widget’s instance data is stored under the same key you used (`button_field` in this example). To output the widget inside your template:
+The child widget's instance data is stored under the same key you used (`button_field` in this example). To output the widget inside your template:
 
 ### Using `$wp_widget_factory`
 
@@ -90,7 +90,7 @@ function filter_child_form( $form, $child_widget ) {
 
 | Parent Widget  | Child Widget(s)     | File                                  |
 | -------------- | ------------------- | ------------------------------------- |
-| Call‑to‑Action | Button              | `widgets/cta/cta.php`                 |
+| Call-to-Action | Button              | `widgets/cta/cta.php`                 |
 | Button Grid    | Repeater of Buttons | `widgets/button-grid/button-grid.php` |
 
 Browse these files in the Widgets Bundle source to see working implementations.
