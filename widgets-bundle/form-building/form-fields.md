@@ -753,7 +753,7 @@ Repeater containing two items (the first item is collapsed and the second item i
 ---
 
 ### widget
-Includes the entire form of an existing widget class.
+Includes the entire form of an existing widget class. You can [find more information about using child widgets here](./child-widgets.md).
 
 #### Additional Options
 - class: `string` The class name of the widget to be included.
