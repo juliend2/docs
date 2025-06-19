@@ -1,5 +1,7 @@
 # SiteOrigin Developer Documentation
 
-This is the home of SiteOrigin developer documentation. This content is directly mirrored on SiteOrigin at http://siteorigin.com/docs/index/
+Welcome to the **SiteOrigin Developer Documentation**.
 
-Please feel free to contribute to these developer docs.
+This repository is the source for the documentation published on [siteorigin.com/docs/](https://siteorigin.com/docs/).
+
+We appreciate your contributions to help improve these docs.
