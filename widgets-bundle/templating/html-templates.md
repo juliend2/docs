@@ -79,8 +79,8 @@ It is considered best practice to escape all potentially unsafe data as late as 
 	<?php echo esc_html( $args['before_title'] ) ?>
 	<h1><?php echo esc_html( $title ) ?></h1>
 	<?php echo esc_html( $args['after_title'] ) ?>
-	<div class="<?php esc_attr( $style_attribute ) ?>">
-		<a href="<?php esc_url( $link_url ) ?>"><?php esc_html( $link_text ) ?></a> 
+	<div class="<?php echo esc_attr( $style_attribute ) ?>">
+		<a href="<?php echo esc_url( $link_url ) ?>"><?php echo esc_html( $link_text ) ?></a> 
 	</div>
 </div>
 ```
