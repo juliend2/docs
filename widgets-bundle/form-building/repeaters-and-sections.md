@@ -7,23 +7,23 @@ Repeaters provide a way to repeat a group of form fields any number of times. Th
 ### Example 1 - Basic Usage
 Form options input:
 ```php
-$form_options = array(
-	'a_repeater' => array(
+$form_options = [
+	'a_repeater' => [
 		'type' => 'repeater',
 		'label' => __( 'A repeating repeater.' , 'siteorigin-docs' ),
 		'item_name'  => __( 'Repeater item', 'siteorigin-docs' ),
-		'fields' => array(
-			'repeat_text' => array(
+		'fields' => [
+			'repeat_text' => [
 				'type' => 'text',
 				'label' => __( 'A text field in a repeater item.', 'siteorigin-docs' )
-			),
-			'repeat_checkbox' => array(
+			],
+			'repeat_checkbox' => [
 				'type' => 'checkbox',
 				'label' => __( 'A checkbox in a repeater item.', 'siteorigin-docs' )
-			)
-		)
-	)
-);
+			]
+		]
+	]
+];
 ```
 Result:
 
@@ -49,9 +49,9 @@ get_template_variables( $instance, $args ) {
     		$boolean_from_repeater_item_checkbox = $repeater_item['repeat_checkbox'];
         }
     }
-    return array(
+    return [
     	'joined_text' => !empty( $joined_text ) ? $joined_text : 'A default string'
-    );
+    ];
 }
 ```
 
@@ -64,28 +64,28 @@ By default, repeaters use the 'item_name' value as the item label in item header
 ### Example 2 - Using Item Labels
 Form options input:
 ```php
-$form_options = array(
-	'a_repeater' => array(
+$form_options = [
+	'a_repeater' => [
 		'type' => 'repeater',
 		'label' => __( 'A repeating repeater.' , 'siteorigin-docs' ),
 		'item_name'  => __( 'Repeater item', 'siteorigin-docs' ),
-		'item_label' => array(
+		'item_label' => [
 			'selector'     => "[id*='repeat_text']",
 			'update_event' => 'change',
 			'value_method' => 'val'
-		),
-		'fields' => array(
-			'repeat_text' => array(
+		],
+		'fields' => [
+			'repeat_text' => [
 				'type' => 'text',
 				'label' => __( 'A text field in a repeater item.', 'siteorigin-docs' )
-			),
-			'repeat_checkbox' => array(
+			],
+			'repeat_checkbox' => [
 				'type' => 'checkbox',
 				'label' => __( 'A checkbox in a repeater item.', 'siteorigin-docs' )
-			)
-		)
-	)
-);
+			]
+		]
+	]
+];
 ```
 
 In the above example the repeater has been configured to use the 'repeat_text' field value as the item label. The result can be seen in the below image.
@@ -100,20 +100,20 @@ Use the `max_items` option to cap how many items a repeater can contain. When th
 #### Example 3 – Limiting Items
 Form options input:
 ```php
-$form_options = array(
-    'feature_list' => array(
+$form_options = [
+    'feature_list' => [
         'type'       => 'repeater',
         'label'      => __( 'Feature list', 'siteorigin-docs' ),
         'item_name'  => __( 'Feature', 'siteorigin-docs' ),
         'max_items'  => 3,  // Allow up to three features.
-        'fields'     => array(
-            'feature_text' => array(
+        'fields'     => [
+            'feature_text' => [
                 'type'  => 'text',
                 'label' => __( 'Feature text', 'siteorigin-docs' ),
-            ),
-        ),
-    ),
-);
+            ],
+        ],
+    ],
+];
 
 ---
 
@@ -123,23 +123,23 @@ Sections simply allow the user to better organize fields and to hide a group of 
 ### Example
 Form options input:
 ```php
-$form_options = array(
-	'a_section' => array(
+$form_options = [
+	'a_section' => [
 		'type' => 'section',
 		'label' => __( 'A section containing related fields.' , 'siteorigin-docs' ),
 		'hide' => true,
-		'fields' => array(
-			'grouped_text' => array(
+		'fields' => [
+			'grouped_text' => [
 				'type' => 'text',
 				'label' => __( 'A grouped text field', 'siteorigin-docs' )
-			),
-			'grouped_checkbox' => array(
+			],
+			'grouped_checkbox' => [
 				'type' => 'checkbox',
 				'label' => __( 'A grouped checkbox', 'siteorigin-docs' )
-			)
-		)
-	)
-);
+			]
+		]
+	]
+];
 ```
 Result:
 
@@ -153,8 +153,8 @@ get_template_variables( $instance, $args ) {
         $text_from_grouped_text = $instance['a_section']['grouped_text'];
     }
     
-    return array(
+    return [
     	'a_text_thing' => ! empty( $text_from_grouped_text ) ? $text_from_grouped_text : 'A default string'
-    );
+    ];
 }
 ```
